@@ -1,43 +1,33 @@
-
+import { customVerify } from "../../config/jwt.js"
+import { sendError } from "../hanlde.response.js";
+import  modelsUsers  from "../../modules/users/models.users.js";
 export function verifyRole(...roles) {
-	return async (req, res, next) => {
+	return async (request, response, next) => {
 		try {
-			let { token } = req.headers;
+			const { token } = request.headers;
 
-			//check if token is given
+			// Check if token is provided
 			if (!token) {
-				res.status(403).send({
-					success: false,
-					message: "Token is invalid",
-				});
-				return;
+				return sendError(response, 403, null, "Token is invalid");
 			}
 
-			let id = customVerify(token);
-			// find user
-			let [user] = await fetchData("Select * from users where id = $1", id);
-			// check users token
+			// Verify the token and get the user ID
+			const {id, iat} = customVerify(token);
+			// Find user by ID
+			const user = await modelsUsers.findById(id);
+
+			// Check user's role
 			if (user) {
-				if (roles.find(el => el == user.role)) {
-					next();
+				if (roles.includes(user.role)) {
+					return next();
 				} else {
-					res.status(403).send({
-						success: false,
-						message: "Unauthorized user",
-					});
+				return sendError(response, 403, null, "Unauthorized user");
 				}
 			} else {
-				res.status(404).send({
-					success: false,
-					message: "Cannot find user",
-				});
+				return sendError(response, 404, null, "Cannot find user");
 			}
 		} catch (error) {
-			res.status(500).send({
-				success: false,
-				message: "Error in verify role",
-			});
+			return sendError(response, 501, error, "Error in verify role :");
 		}
 	};
 }
-

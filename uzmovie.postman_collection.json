@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "211147fb-b2c0-4534-9eb7-8f489f803906",
+		"name": "uzmovie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35004733"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "postCategories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/categories/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"categories",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putCategories",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"updated category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/categories/put/66af595f8d485825f531dde3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"categories",
+								"put",
+								"66af595f8d485825f531dde3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategories",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/categories/delete/66af595f8d485825f531dde3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"categories",
+								"delete",
+								"66af595f8d485825f531dde3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "moviesCategories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"title\": \"Inception\",\r\n    \"description\": \"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse ...\",\r\n    \"year\": 2010,\r\n    \"category_id\": \"66af595a8d485825f531dde0\"\r\n  }\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/movies/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"movies",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMovies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putMovies",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"updated movie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/movies/put/66af6dff325b20d190c5090a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"movies",
+								"put",
+								"66af6dff325b20d190c5090a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategories",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2YjU0MWQ4YWY5Nzg0ZjBlYzljMiIsImlhdCI6MTcyMjc3MjMwOH0.UAwbESOXXVR9Cm2dwL3lRVjo0rOwm9bD3SW-wbylCnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/movies/delete/66af6dff325b20d190c5090a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"movies",
+								"delete",
+								"66af6dff325b20d190c5090a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\" : \"Admin adminov\",\r\n    \"role\" : \"admin\",\r\n    \"password\" : \"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\" : \"Admin adminov\",\r\n    \"password\" : \"1111\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
