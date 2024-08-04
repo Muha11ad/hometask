@@ -17,7 +17,7 @@ const movieSchema = new Schema(
 			type: Number,
 			required: true,
 		},
-		category: {
+		category_id: {
 			type: Types.ObjectId,
 			ref: "Category",
 			required: true,

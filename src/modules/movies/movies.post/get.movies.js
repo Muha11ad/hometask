@@ -1,9 +1,9 @@
 import modelMovies from "../model.movies.js";
-import { sendError, sendResponse } from "../../../middlewares/handle.response.js";
+import { sendResponse, sendError } from "../../../middlewares/hanlde.response.js";
 
-export async function getMovies(request, response) {
+export async function getMovie(request, response) {
 	try {
-		const movies = await modelMovies.find().populate('category');
+		const movies = await modelMovies.find()
 		await sendResponse(response, "All movies are here", movies);
 	} catch (e) {
 		sendError(response, 500, e, "Error while getting movies");

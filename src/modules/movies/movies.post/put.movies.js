@@ -1,12 +1,12 @@
 import modelMovies from "../model.movies.js";
-import { sendError, sendResponse } from "../../../middlewares/handle.response.js";
+import { sendError, sendResponse } from "../../../middlewares/hanlde.response.js";
 
 export async function putMovie(request, response) {
 	const { id } = request.params;
 	const updateData = request.body;
 
 	try {
-		const updatedMovie = await modelMovies.findByIdAndUpdate(id, updateData, { new: true }).populate('category');
+		const updatedMovie = await modelMovies.findByIdAndUpdate(id, updateData, { new: true });
 		if (!updatedMovie) {
 			return sendError(response, 404, null, "Movie not found");
 		}

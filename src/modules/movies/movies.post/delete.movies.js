@@ -1,5 +1,5 @@
 import modelMovies from "../model.movies.js";
-import { sendError, sendResponse } from "../../../middlewares/handle.response.js";
+import { sendError, sendResponse } from "../../../middlewares/hanlde.response.js";
 
 export async function deleteMovie(request, response) {
 	const { id } = request.params;
